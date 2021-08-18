@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 字符串 '10000000' => '10,000,000'
+        var transString = function (str) {
+            let times = str.length / 3 | 0
+            let index = 1
+            let strArr = str.split('')
+            while (index <= times) {
+                strArr.splice(strArr.length - 3 * index - (index - 1), 0, ',')
+                index ++
+            }
+            return strArr.join('')
+        }
+        console.log(transString('10000000'))
+    </script>
+</body>
+</html>
